@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Bhavya &amp; Sanyam | Royal Wedding Invitation</title>
+  <meta property="og:url" content="https://share.google/cXYoefN7goMe2oGer" />
+  <meta property="og:title" content="Bhavya &amp; Sanyam — Royal Wedding Invitation" />
+  <meta property="og:description" content="Together with their families, Bhavya &amp; Sanyam joyfully invite you to celebrate their wedding union on 26th November 2026." />
+  <meta property="og:type" content="website" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-light_1.png" />
+  <link rel="apple-touch-icon" type="image/png" href="images/apple-touch-icon_1.png" />
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Royal Custom Design System & Animations -->
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body class="envelope-active">
+
+  <!-- Ambient Canvas for Floating Golden Dust Particles -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Background Music Track -->
+  <audio id="weiAudio" loop preload="auto">
+    <source src="media/Sunhera.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Interactive Wax Seal Envelope Overlay -->
+  <div id="weiOverlay" aria-label="Wax Seal Royal Invitation">
+    <img id="weiImg" src="images/envelope_cover.png" alt="Bhavya &amp; Sanyam Royal Wedding Invitation" draggable="false" />
+    <div id="weiTapWrap">
+      <div class="wei-chevron"></div>
+      <div id="weiTapLabel">Tap to open</div>
+    </div>
+  </div>
+
+  <!-- Wax Seal Video Reveal Animation -->
+  <div id="weiVideoWrap" aria-label="Wax Seal Unveiling Video">
+    <video id="weiVideo" src="media/wax_seal_opening.mp4" muted playsinline webkit-playsinline preload="auto"></video>
+  </div>
+
+  <!-- Floating Audio Toggle Button -->
+  <div id="weiAudioBtn" title="Play / Pause Wedding Melody" aria-label="Toggle Wedding Music">
+    <div class="audio-pulse-ring"></div>
+    <svg id="weiIconPause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:block">
+      <rect x="6" y="5" width="4" height="14" rx="1"/>
+      <rect x="14" y="5" width="4" height="14" rx="1"/>
+    </svg>
+    <svg id="weiIconPlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none">
+      <polygon points="5,3 19,12 5,21"/>
+    </svg>
+  </div>
+
+  <!-- Main Wedding Invitation Web App -->
+  <div class="wedding-invitation-app" id="main-content">
+
+    <!-- Ambient Floating Golden Petals -->
+    <div class="floating-petals-container" aria-hidden="true">
+      <img class="petal petal-1" src="images/cdn/noroot_4.png" alt="" />
+      <img class="petal petal-2" src="images/cdn/noroot_5.png" alt="" />
+      <img class="petal petal-3" src="images/cdn/noroot_7.png" alt="" />
+      <img class="petal petal-4" src="images/cdn/noroot_9.png" alt="" />
+    </div>
+
+    <!-- SECTION 1: HERO (FRONT ANNOUNCEMENT) -->
+    <section class="royal-section hero-section">
+      <!-- Background Swans Video -->
+      <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline>
+        <source src="media/Swans2.mov" type="video/mp4">
+      </video>
+
+      <!-- Corner Floral Bouquets (noroot_3 and noroot_2) -->
+      <img class="hero-corner-floral top-left" src="images/cdn/noroot_3.png" alt="Royal Floral Corner Bouquet" />
+      <img class="hero-corner-floral top-right" src="images/cdn/noroot_2.png" alt="Royal Floral Corner Bouquet" />
+
+      <div class="hero-content">
+        <div class="ganesh-invocation">
+          <img class="ganesh-top-flourish" src="images/cdn/noroot_6.png" alt="Gold Filigree" />
+          <div class="ganesh-title">Shree Ganeshaya Namah</div>
+          <div class="ganesh-sub">The Royal Wedding Celebration Of</div>
+        </div>
+
+        <div class="couple-headline-wrap">
+          <div class="couple-headline">Bhavya</div>
+          <span class="ampersand">&amp;</span>
+          <div class="couple-headline">Sanyam</div>
+        </div>
+
+        <div class="wedding-date-badge">
+          26 • November • 2026
+        </div>
+
+        <!-- Sacred Blessing & Invitation Note -->
+        <div class="sacred-blessing-wrap">
+          <div class="sacred-blessing-title">Two Souls • Seven Sacred Vows</div>
+          <div class="sacred-blessing-sub">One Eternal Journey of Love</div>
+          <p class="invitation-letter">
+            Together with their families, Bhavya &amp; Sanyam joyfully invite you and your family to grace the auspicious wedding celebrations and bestow your heartfelt blessings as they begin their sacred journey together.
+          </p>
+          <img class="ornament-divider" src="images/cdn/noroot_6.png" alt="Gold Filigree Divider" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE SCRATCH DATE & THE CELEBRATION BEGINS IN -->
+    <section class="countdown-section">
+      <div class="countdown-header">The Celebration Begins In</div>
+
+      <div id="countdownContainer">
+        <div class="time-block">
+          <div class="number-wrap"><span class="number" id="days">00</span></div>
+          <div class="time-label">Days</div>
+        </div>
+        <span class="time-colon">:</span>
+        <div class="time-block">
+          <div class="number-wrap"><span class="number" id="hours">00</span></div>
+          <div class="time-label">Hours</div>
+        </div>
+        <span class="time-colon">:</span>
+        <div class="time-block">
+          <div class="number-wrap"><span class="number" id="minutes">00</span></div>
+          <div class="time-label">Mins</div>
+        </div>
+        <span class="time-colon">:</span>
+        <div class="time-block">
+          <div class="number-wrap"><span class="number" id="seconds">00</span></div>
+          <div class="time-label">Secs</div>
+        </div>
+      </div>
+
+      <!-- Interactive Scratch-to-Reveal Card -->
+      <div class="scratch-date-wrap" id="scratch-date-container">
+        <div class="scratch-card-body">
+          <div class="scratch-revealed-content">
+            <span class="revealed-day">Thursday, 26 Nov 2026</span>
+            <span class="revealed-sub">Crossroads Banquets</span>
+          </div>
+          <canvas id="scratch-canvas"></canvas>
+        </div>
+        <div id="scratch-hint" class="scratch-hint">
+          <span class="scratch-hint-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Scratch the gold foil to reveal wedding day</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE ROYAL COUPLE PHOTOS (AFTER THE CELEBRATION BEGINS IN) -->
+    <section class="royal-section couple-section" id="couple">
+      <!-- Decorative Floral Corner Accents (noroot_3 & noroot_2) -->
+      <img class="section-corner-floral top-left" src="images/cdn/noroot_3.png" alt="Royal Peony Bouquet" />
+      <img class="section-corner-floral top-right" src="images/cdn/noroot_2.png" alt="Royal Rose Bouquet" />
+
+      <div class="couple-section-inner">
+        <div class="royal-crown-emblem">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <h2 class="section-title">The Royal Couple</h2>
+        <img class="section-heading-flourish" src="images/cdn/noroot_6.png" alt="Gold Divider" />
+        
+        <p class="couple-romantic-quote">
+          &ldquo;Destined by the stars, united by seven sacred vows &amp; eternal love&rdquo;
+        </p>
+
+        <!-- Symmetrical Royal Arched Photo Pavilion -->
+        <div class="couple-gallery-container">
+          <!-- Bride Bhavya -->
+          <div class="photo-frame-wrap">
+            <div class="frame-crown-top"><i class="fa-solid fa-crown"></i></div>
+            <div class="royal-arched-card bhavya-frame">
+              <div class="card-shimmer-overlay"></div>
+              <img class="royal-arched-img" src="assets/1.jpeg" alt="Bride Bhavya" />
+            </div>
+            <div class="couple-role-badge">The Bride</div>
+            <div class="photo-name-tag">Bhavya</div>
+            <div class="photo-attribute-tag">Grace • Elegance • Radiance</div>
+          </div>
+
+          <!-- Central Union Knot -->
+          <div class="couple-union-knot">
+            <div class="knot-ring">
+              <i class="fa-solid fa-heart beating-heart"></i>
+            </div>
+            <div class="knot-divider-line"></div>
+            <span class="knot-text">Forever Together</span>
+          </div>
+
+          <!-- Groom Sanyam -->
+          <div class="photo-frame-wrap">
+            <div class="frame-crown-top"><i class="fa-solid fa-crown"></i></div>
+            <div class="royal-arched-card sanyam-frame">
+              <div class="card-shimmer-overlay"></div>
+              <img class="royal-arched-img" src="assets/2.jpeg" alt="Groom Sanyam" />
+            </div>
+            <div class="couple-role-badge">The Groom</div>
+            <div class="photo-name-tag">Sanyam</div>
+            <div class="photo-attribute-tag">Devotion • Strength • Honor</div>
+          </div>
+        </div>
+
+        <!-- Interactive Rose Petal & Blessings Shower Bar -->
+        <div class="couple-blessing-bar">
+          <button class="btn-shower-blessings" id="btn-shower-blessings" type="button" aria-label="Shower Rose Petals and Blessings">
+            <span class="shower-icon"><i class="fa-solid fa-heart beating-heart"></i></span>
+            <span class="shower-text">Shower Petals &amp; Blessings</span>
+            <span class="shower-counter-pill"><span id="blessing-count">452</span> showered</span>
+          </button>
+          <p class="blessing-hint">Tap to shower fragrant rose petals &amp; golden stardust over the couple</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: AUSPICIOUS SCHEDULE OF EVENTS (Reference Expandable Architecture) -->
+    <section class="royal-section schedule-section" id="events">
+      <!-- Decorative Floral Corner Accents (noroot_3 & noroot_2) -->
+      <img class="section-corner-floral top-left" src="images/cdn/noroot_3.png" alt="Royal Peony Bouquet" />
+      <img class="section-corner-floral top-right" src="images/cdn/noroot_2.png" alt="Royal Rose Bouquet" />
+
+      <h2 class="section-title">Schedule of Events</h2>
+      <img class="section-heading-flourish" src="images/cdn/noroot_6.png" alt="Gold Divider" />
+      <div class="section-subtitle">Five Auspicious Wedding Ceremonies • 26th November 2026</div>
+
+      <div class="timeline-cards-container">
+
+        <!-- Ceremony 1: Baraat Swagat -->
+        <div class="event-card-luxury">
+          <div class="event-header-row">
+            <div class="event-badge-icon" title="Baraat Swagat">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <div class="event-main-content">
+              <div class="event-time-tag">11:00 AM</div>
+              <div class="event-title-luxury">Baraat Swagat</div>
+              <div class="event-description-luxury">Grand Procession &amp; Traditional Welcome</div>
+            </div>
+          </div>
+
+          <div class="event-card-bottom-bar">
+            <div class="event-card-actions">
+              <button class="btn-card-itinerary" type="button" aria-expanded="false" title="Toggle Ceremony Itinerary">
+                <i class="fa-solid fa-list-check"></i> SCHEDULE <i class="fa-solid fa-chevron-down it-chevron"></i>
+              </button>
+              <button class="btn-card-add cal-btn" data-title="Baraat Swagat | Bhavya &amp; Sanyam Wedding" data-start="2026-11-26T11:00:00" data-end="2026-11-26T11:30:00" data-location="Crossroads Banquets" title="Add to Calendar">
+                <i class="fa-regular fa-calendar-plus"></i> ADD
+              </button>
+              <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="btn-card-map" title="Navigate on Google Maps">
+                <i class="fa-solid fa-diamond-turn-right"></i> MAP
+              </a>
+            </div>
+          </div>
+
+          <div class="event-itinerary-drawer">
+            <div class="itinerary-timeline">
+              <div class="itinerary-step">
+                <div class="step-time-badge">11:00 AM</div>
+                <div class="step-details">
+                  <strong class="step-title">Dhol Beats &amp; Grand Baraat Arrival</strong>
+                  <p class="step-desc">Joyous arrival of groom Sanyam with dancing family, dhol beats, and brass band</p>
+                </div>
+              </div>
+              <div class="itinerary-step">
+                <div class="step-time-badge">11:15 AM</div>
+                <div class="step-details">
+                  <strong class="step-title">Milni &amp; Aarti Swagat</strong>
+                  <p class="step-desc">Traditional floral garland welcome and blessing ritual by the bride's family</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ceremony 2: Jaimala Ceremony -->
+        <div class="event-card-luxury">
+          <div class="event-header-row">
+            <div class="event-badge-icon" title="Jaimala Ceremony">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="event-main-content">
+              <div class="event-time-tag">11:30 AM</div>
+              <div class="event-title-luxury">Jaimala Ceremony</div>
+              <div class="event-description-luxury">Exchange of Sacred Floral Garlands</div>
+            </div>
+          </div>
+
+          <div class="event-card-bottom-bar">
+            <div class="event-card-actions">
+              <button class="btn-card-itinerary" type="button" aria-expanded="false" title="Toggle Ceremony Itinerary">
+                <i class="fa-solid fa-list-check"></i> SCHEDULE <i class="fa-solid fa-chevron-down it-chevron"></i>
+              </button>
+              <button class="btn-card-add cal-btn" data-title="Jaimala Ceremony | Bhavya &amp; Sanyam Wedding" data-start="2026-11-26T11:30:00" data-end="2026-11-26T13:00:00" data-location="Crossroads Banquets" title="Add to Calendar">
+                <i class="fa-regular fa-calendar-plus"></i> ADD
+              </button>
+              <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="btn-card-map" title="Navigate on Google Maps">
+                <i class="fa-solid fa-diamond-turn-right"></i> MAP
+              </a>
+            </div>
+          </div>
+
+          <div class="event-itinerary-drawer">
+            <div class="itinerary-timeline">
+              <div class="itinerary-step">
+                <div class="step-time-badge">11:30 AM</div>
+                <div class="step-details">
+                  <strong class="step-title">Grand Bridal Entry</strong>
+                  <p class="step-desc">Auspicious entrance of bride Bhavya under the phoolon ki chaadar</p>
+                </div>
+              </div>
+              <div class="itinerary-step">
+                <div class="step-time-badge">11:45 AM</div>
+                <div class="step-details">
+                  <strong class="step-title">Varmala Exchange</strong>
+                  <p class="step-desc">Exchange of sacred floral garlands amidst showers of rose petals and fireworks</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ceremony 3: Royal Lunch -->
+        <div class="event-card-luxury">
+          <div class="event-header-row">
+            <div class="event-badge-icon" title="Royal Lunch">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="event-main-content">
+              <div class="event-time-tag">1:00 PM</div>
+              <div class="event-title-luxury">Royal Lunch</div>
+              <div class="event-description-luxury">Shahi Bhoj &amp; Celebratory Feast</div>
+            </div>
+          </div>
+
+          <div class="event-card-bottom-bar">
+            <div class="event-card-actions">
+              <button class="btn-card-itinerary" type="button" aria-expanded="false" title="Toggle Ceremony Itinerary">
+                <i class="fa-solid fa-list-check"></i> SCHEDULE <i class="fa-solid fa-chevron-down it-chevron"></i>
+              </button>
+              <button class="btn-card-add cal-btn" data-title="Royal Lunch Feast | Bhavya &amp; Sanyam Wedding" data-start="2026-11-26T13:00:00" data-end="2026-11-26T15:00:00" data-location="Crossroads Banquets" title="Add to Calendar">
+                <i class="fa-regular fa-calendar-plus"></i> ADD
+              </button>
+              <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="btn-card-map" title="Navigate on Google Maps">
+                <i class="fa-solid fa-diamond-turn-right"></i> MAP
+              </a>
+            </div>
+          </div>
+
+          <div class="event-itinerary-drawer">
+            <div class="itinerary-timeline">
+              <div class="itinerary-step">
+                <div class="step-time-badge">01:00 PM</div>
+                <div class="step-details">
+                  <strong class="step-title">Shahi Bhoj Banquet</strong>
+                  <p class="step-desc">Sumptuous multi-cuisine buffet featuring royal delicacies, mocktails, and live dessert counters</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ceremony 4: Sacred Pheras -->
+        <div class="event-card-luxury">
+          <div class="event-header-row">
+            <div class="event-badge-icon" title="Sacred Pheras">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <div class="event-main-content">
+              <div class="event-time-tag">3:00 PM</div>
+              <div class="event-title-luxury">Sacred Pheras</div>
+              <div class="event-description-luxury">Seven Holy Vows Around the Sacred Agni</div>
+            </div>
+          </div>
+
+          <div class="event-card-bottom-bar">
+            <div class="event-card-actions">
+              <button class="btn-card-itinerary" type="button" aria-expanded="false" title="Toggle Ceremony Itinerary">
+                <i class="fa-solid fa-list-check"></i> SCHEDULE <i class="fa-solid fa-chevron-down it-chevron"></i>
+              </button>
+              <button class="btn-card-add cal-btn" data-title="Sacred Pheras &amp; Holy Vows | Bhavya &amp; Sanyam" data-start="2026-11-26T15:00:00" data-end="2026-11-26T18:00:00" data-location="Crossroads Banquets" title="Add to Calendar">
+                <i class="fa-regular fa-calendar-plus"></i> ADD
+              </button>
+              <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="btn-card-map" title="Navigate on Google Maps">
+                <i class="fa-solid fa-diamond-turn-right"></i> MAP
+              </a>
+            </div>
+          </div>
+
+          <div class="event-itinerary-drawer">
+            <div class="itinerary-timeline">
+              <div class="itinerary-step">
+                <div class="step-time-badge">03:00 PM</div>
+                <div class="step-details">
+                  <strong class="step-title">Mandap Rituals &amp; Kanyadaan</strong>
+                  <p class="step-desc">Sacred Vedic chants, Ganesh puja, and heartfelt Kanyadaan blessings</p>
+                </div>
+              </div>
+              <div class="itinerary-step">
+                <div class="step-time-badge">04:30 PM</div>
+                <div class="step-details">
+                  <strong class="step-title">Saat Pheras &amp; Sindoor Daan</strong>
+                  <p class="step-desc">Seven eternal vows around the holy agni and solemnizing the sacred marriage</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ceremony 5: Doli & Vidai -->
+        <div class="event-card-luxury">
+          <div class="event-header-row">
+            <div class="event-badge-icon" title="Doli &amp; Vidai">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div class="event-main-content">
+              <div class="event-time-tag">6:00 PM</div>
+              <div class="event-title-luxury">Doli &amp; Vidai</div>
+              <div class="event-description-luxury">Heartfelt Blessings &amp; Auspicious Send-Off</div>
+            </div>
+          </div>
+
+          <div class="event-card-bottom-bar">
+            <div class="event-card-actions">
+              <button class="btn-card-itinerary" type="button" aria-expanded="false" title="Toggle Ceremony Itinerary">
+                <i class="fa-solid fa-list-check"></i> SCHEDULE <i class="fa-solid fa-chevron-down it-chevron"></i>
+              </button>
+              <button class="btn-card-add cal-btn" data-title="Doli &amp; Vidai | Bhavya &amp; Sanyam Wedding" data-start="2026-11-26T18:00:00" data-end="2026-11-26T19:30:00" data-location="Crossroads Banquets" title="Add to Calendar">
+                <i class="fa-regular fa-calendar-plus"></i> ADD
+              </button>
+              <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="btn-card-map" title="Navigate on Google Maps">
+                <i class="fa-solid fa-diamond-turn-right"></i> MAP
+              </a>
+            </div>
+          </div>
+
+          <div class="event-itinerary-drawer">
+            <div class="itinerary-timeline">
+              <div class="itinerary-step">
+                <div class="step-time-badge">06:00 PM</div>
+                <div class="step-details">
+                  <strong class="step-title">Vidai &amp; Blessing Shower</strong>
+                  <p class="step-desc">Heartfelt hugs, emotional farewell, and abundant blessings as the new journey begins</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: THE ROYAL VENUE & MAP NAVIGATION -->
+    <section class="venue-section" id="venue">
+      <h2 class="section-title">The Royal Venue</h2>
+      <img class="section-heading-flourish" src="images/cdn/noroot_6.png" alt="Gold Divider" />
+      <div class="section-subtitle">Crossroads Banquets</div>
+
+      <img class="venue-artwork" src="images/cdn/ChatGPT_Image_May_25.png" alt="Royal Palace Mandap Arch" />
+
+      <div class="venue-name">Crossroads Banquets</div>
+      <div class="venue-address">
+        <i class="fa-solid fa-location-dot"></i> Grand Wedding Celebrations • Delhi-NCR
+      </div>
+
+      <!-- Google Map Preview Card (Reference Architecture) -->
+      <div class="venue-map-preview-card">
+        <div class="venue-map-preview-header">
+          <span class="map-preview-tag"><i class="fa-solid fa-map-location-dot"></i> Google Maps Navigation</span>
+          <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="map-direct-link" title="Open Full Google Maps">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Map
+          </a>
+        </div>
+        <div class="venue-map-iframe-container">
+          <iframe 
+            title="Google Map preview for Crossroads Banquets"
+            src="https://maps.google.com/maps?q=Crossroads+Banquets&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" 
+            allowfullscreen="" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="actions-wrap">
+        <a href="https://share.google/cXYoefN7goMe2oGer" target="_blank" rel="noopener noreferrer" class="royal-btn btn-gold">
+          <i class="fa-solid fa-diamond-turn-right"></i>
+          Get Directions
+        </a>
+
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bhavya%20%26%20Sanyam%20Wedding&dates=20261126T110000/20261126T190000&details=Join%20us%20for%20the%20royal%20wedding%20celebrations%20of%20Bhavya%20%26%20Sanyam%20at%20Crossroads%20Banquets.%20Itinerary%3A%20Baraat%20(11%3A00%20AM)%2C%20Jaimala%20(11%3A30%20AM)%2C%20Lunch%20(1%3A00%20PM)%2C%20Pheras%20(3%3A00%20PM)%2C%20Doli%20(6%3A00%20PM).&location=Crossroads%20Banquets" target="_blank" rel="noopener noreferrer" class="royal-btn btn-crimson">
+          <i class="fa-regular fa-calendar-plus"></i>
+          Add to Calendar
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 6: WARM BLESSINGS & DRESS CODE -->
+    <section class="royal-section notes-section">
+      <div class="notes-cards-grid">
+        <!-- Card 1: Warm Blessings with Rose Vine Accents (noroot_14 & noroot_10) -->
+        <div class="note-card">
+          <img class="card-corner-vine left" src="images/cdn/noroot_14.png" alt="Rose Vine" />
+          <img class="card-corner-vine right" src="images/cdn/noroot_10.png" alt="Rose Vine" />
+          <div class="note-card-title">Warm Blessings</div>
+          <p class="note-card-text">
+            Your gracious presence and heartfelt blessings are the greatest gifts we treasure.
+          </p>
+          <div class="note-card-sub">(No boxed gifts, please)</div>
+        </div>
+
+        <!-- Card 2: Dress Code with Rose Vine Accents (noroot_14 & noroot_10) -->
+        <div class="note-card">
+          <img class="card-corner-vine left" src="images/cdn/noroot_14.png" alt="Rose Vine" />
+          <img class="card-corner-vine right" src="images/cdn/noroot_10.png" alt="Rose Vine" />
+          <div class="note-card-title">Dress Code</div>
+          <p class="note-card-text">
+            Royal Indian Festive &amp; Traditional Ethnic Attire
+          </p>
+          <div class="note-card-sub">(Pastels &amp; Rich Festive Hues)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: INVITESTORY FOOTER BRANDING -->
+    <footer class="invitestory-footer">
+      <img class="footer-flourish" src="images/cdn/noroot_6.png" alt="Gold Filigree Flourish" />
+      <div class="footer-signature">Designed with love by InviteStory</div>
+      <a href="https://www.instagram.com/invitestory.in/" target="_blank" rel="noopener noreferrer" class="footer-insta-link" title="Follow InviteStory on Instagram">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        @invitestory.in
+      </a>
+      <div class="copyright-note">&copy; 2026 Bhavya &amp; Sanyam • All Rights Reserved</div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Engine -->
+  <script src="app.js"></script>
+
+</body>
+</html>

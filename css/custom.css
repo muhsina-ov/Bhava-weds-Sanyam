@@ -1,0 +1,1668 @@
+/* ==========================================================================
+   BHAVYA & SANYAM ROYAL WEDDING INVITATION — 100% ENGLISH LUXURY DESIGN SYSTEM
+   Faithful to Reference Site (nabila-abhishek.invitingyou.top) Architecture
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --royal-gold-light: #F3E5AB;
+  --royal-gold-primary: #C5A059;
+  --royal-gold-dark: #8C6721;
+  --royal-crimson: #5A0F1B;
+  --royal-crimson-deep: #430912;
+  --royal-crimson-light: #7A1727;
+  --royal-ivory: #F9F0E0;
+  --royal-text: #4A3319;
+  --royal-text-muted: #7A5930;
+  
+  --gold-gradient: linear-gradient(135deg, #8C6721 0%, #C5A059 35%, #F3E5AB 50%, #C5A059 65%, #8C6721 100%);
+  --crimson-gradient: linear-gradient(135deg, #7A1A28 0%, #4A0812 100%);
+  --card-gradient: radial-gradient(circle at 50% 50%, rgba(255, 253, 249, 0.98) 0%, rgba(249, 240, 224, 0.94) 100%);
+  --gold-glow: 0 16px 36px rgba(140, 100, 60, 0.22), 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Base & Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  background-color: var(--royal-ivory);
+  color: var(--royal-text);
+  font-family: 'Playfair Display', Georgia, serif;
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.envelope-active,
+body.video-active {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
+body.envelope-active #main-content,
+body.video-active #main-content,
+body.envelope-active #weiAudioBtn,
+body.video-active #weiAudioBtn {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#main-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), visibility 1s ease;
+}
+
+/* Ambient Canvas Particles */
+#ambient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.65;
+}
+
+/* Main Wrapper */
+.wedding-invitation-app {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--royal-ivory);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 50px rgba(140, 100, 60, 0.14);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   1. WAX SEAL ROYALE ENVELOPE OVERLAY & VIDEO SEQUENCE
+   ========================================================================== */
+#weiOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: var(--royal-ivory);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+#weiImg {
+  width: 100%;
+  max-width: 440px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(90, 15, 27, 0.18));
+  transition: transform 0.4s ease;
+}
+
+#weiOverlay:hover #weiImg {
+  transform: scale(1.015);
+}
+
+#weiTapWrap {
+  position: absolute;
+  bottom: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  animation: weiTapIn 1.2s 0.8s both;
+  pointer-events: none;
+}
+
+@keyframes weiTapIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+#weiTapLabel {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(140, 100, 60, 0.9);
+  animation: weiPulse 2.4s 1.6s ease-in-out infinite;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+@keyframes weiPulse {
+  0%, 100% { opacity: 0.45; letter-spacing: 0.28em; }
+  50%      { opacity: 1;    letter-spacing: 0.32em; }
+}
+
+.wei-chevron {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(140, 100, 60, 0.75);
+  border-top: 2px solid rgba(140, 100, 60, 0.75);
+  transform: rotate(-45deg);
+  animation: weiChevron 2.4s 1.9s ease-in-out infinite;
+}
+
+@keyframes weiChevron {
+  0%, 100% { transform: rotate(-45deg) translate(0, 0); opacity: 0.6; }
+  50%      { transform: rotate(-45deg) translate(3px, -3px); opacity: 1; }
+}
+
+/* Wax Seal Video Reveal */
+#weiVideoWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--royal-ivory);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+#weiVideoWrap.wei-video-in {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#weiVideoWrap.wei-video-out {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#weiVideo {
+  width: 100%;
+  max-width: 440px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Floating Audio Player Widget */
+#weiAudioBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: var(--crimson-gradient);
+  border: 2px solid var(--royal-gold-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2147483647;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(90, 15, 27, 0.45), 0 0 16px rgba(197, 160, 89, 0.35);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.audio-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(197, 160, 89, 0.6);
+  animation: audioRingPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes audioRingPulse {
+  0%   { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+#weiAudioBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(90, 15, 27, 0.55), 0 0 22px rgba(229, 195, 120, 0.5);
+}
+
+#weiAudioBtn svg {
+  width: 22px;
+  height: 22px;
+  fill: #FFFDF9;
+}
+
+/* Ambient Floating Petals in Background */
+.floating-petals-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: drop-shadow(0 2px 6px rgba(197, 160, 89, 0.3));
+}
+
+.petal-1 { top: 8%; left: 6%; width: 26px; animation: petalDrift1 12s ease-in-out infinite; }
+.petal-2 { top: 32%; right: 6%; width: 28px; animation: petalDrift2 14s 2s ease-in-out infinite; }
+.petal-3 { top: 58%; left: 5%; width: 24px; animation: petalDrift1 13s 4s ease-in-out infinite; }
+.petal-4 { top: 82%; right: 8%; width: 22px; animation: petalDrift2 15s 1s ease-in-out infinite; }
+
+
+/* ==========================================================================
+   2. HERO SECTION & COUPLE GALLERY
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  padding: 45px 24px 45px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hero Floral Corner Bouquets (noroot_3 & noroot_2) */
+.hero-corner-floral {
+  position: absolute;
+  width: 140px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 6px 16px rgba(140, 100, 60, 0.18));
+  opacity: 0.95;
+}
+
+.hero-corner-floral.top-left {
+  top: 0;
+  left: 0;
+  animation: floralSwayLeft 6s ease-in-out infinite;
+}
+
+.hero-corner-floral.top-right {
+  top: 0;
+  right: 0;
+  animation: floralSwayRight 6s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.ganesh-invocation {
+  margin-bottom: 24px;
+  animation: heroFadeIn 1.5s 0.2s ease backwards;
+}
+
+.ganesh-top-flourish {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 6px rgba(197, 160, 89, 0.25));
+}
+
+.ganesh-title {
+  font-family: 'Cinzel', serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--gold-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 5s ease-in-out infinite;
+  margin-bottom: 4px;
+}
+
+.ganesh-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8C6721;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+.couple-headline-wrap {
+  margin: 22px 0 14px;
+  animation: heroFadeIn 1.8s 0.5s ease backwards;
+}
+
+.couple-headline {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #7A1A28 0%, #C5A059 50%, #5A0F1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 5px rgba(120, 20, 40, 0.15));
+}
+
+.ampersand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 38px;
+  color: #C5A059;
+  display: block;
+  margin: 4px 0;
+}
+
+.wedding-date-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  letter-spacing: 0.28em;
+  color: #8C6721;
+  font-weight: 700;
+  margin-top: 14px;
+  display: inline-block;
+  border-top: 1px solid rgba(197, 160, 89, 0.45);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.45);
+  padding: 6px 22px;
+  animation: heroFadeIn 1.8s 0.8s ease backwards;
+}
+
+/* ==========================================================================
+   THE ROYAL COUPLE SECTION STYLING & ANIMATIONS
+   ========================================================================== */
+.couple-section {
+  position: relative;
+  padding: 55px 24px 60px;
+  background: radial-gradient(circle at 50% 30%, #FFFDF9 0%, #FAF4E8 60%, #F5EBD7 100%);
+  border-top: 1.5px solid rgba(197, 160, 89, 0.4);
+  border-bottom: 1.5px solid rgba(197, 160, 89, 0.4);
+  box-shadow: inset 0 0 50px rgba(197, 160, 89, 0.08);
+  overflow: hidden;
+}
+
+.couple-section-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.royal-crown-emblem {
+  font-size: 24px;
+  color: #C5A059;
+  filter: drop-shadow(0 2px 8px rgba(197, 160, 89, 0.45));
+  margin-bottom: 10px;
+  animation: heartPulse 3s ease-in-out infinite;
+}
+
+.couple-romantic-quote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #8C6721;
+  max-width: 440px;
+  margin: 14px auto 32px;
+  opacity: 0.95;
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.8));
+}
+
+/* Symmetrical Royal Arched Photo Pavilion */
+.couple-gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 20px auto 26px;
+  max-width: 540px;
+  padding: 0 8px;
+  animation: heroFadeIn 2s 0.4s ease backwards;
+}
+
+.photo-frame-wrap {
+  flex: 1;
+  max-width: 215px;
+  text-align: center;
+  position: relative;
+}
+
+.frame-crown-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #FFFDF9 0%, #F5EBD7 100%);
+  border: 1.8px solid #C5A059;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #8C6721;
+  z-index: 6;
+  box-shadow: 0 4px 10px rgba(140, 100, 60, 0.25), 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+.royal-arched-card {
+  width: 100%;
+  height: 320px;
+  border-radius: 150px 150px 20px 20px;
+  border: 3.5px solid #C5A059;
+  outline: 2px solid #F3E5AB;
+  outline-offset: -6px;
+  background: #FFFDF9;
+  padding: 5px;
+  box-shadow: 0 18px 42px rgba(140, 100, 60, 0.25), 0 0 24px rgba(229, 195, 120, 0.28);
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.card-shimmer-overlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 3;
+  transition: left 0.8s ease;
+}
+
+.royal-arched-card:hover .card-shimmer-overlay {
+  left: 150%;
+}
+
+.bhavya-frame {
+  animation: photoFloatLeft 5s ease-in-out infinite;
+}
+
+.sanyam-frame {
+  animation: photoFloatRight 5s ease-in-out infinite;
+}
+
+@keyframes photoFloatLeft {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg) scale(1); }
+  50%      { transform: translateY(-9px) rotate(1.2deg) scale(1.025); }
+}
+
+@keyframes photoFloatRight {
+  0%, 100% { transform: translateY(0) rotate(1.5deg) scale(1); }
+  50%      { transform: translateY(-9px) rotate(-1.2deg) scale(1.025); }
+}
+
+.royal-arched-card:hover {
+  animation-play-state: paused;
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 26px 54px rgba(140, 100, 60, 0.38), 0 0 30px rgba(229, 195, 120, 0.5);
+  border-color: #E5C378;
+}
+
+.royal-arched-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 144px 144px 14px 14px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.bhavya-frame .royal-arched-img {
+  object-position: center 20%;
+}
+
+.royal-arched-card:hover .royal-arched-img {
+  transform: scale(1.05);
+}
+
+/* Central Union Knot */
+.couple-union-knot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 4px;
+  z-index: 4;
+}
+
+.knot-ring {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.8px solid #C5A059;
+  background: #FFFDF9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8B1E2F;
+  font-size: 15px;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+}
+
+.knot-divider-line {
+  width: 1.5px;
+  height: 36px;
+  background: linear-gradient(180deg, #C5A059 0%, rgba(197, 160, 89, 0) 100%);
+}
+
+.knot-text {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8C6721;
+  font-weight: 700;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.beating-heart {
+  animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  35%      { transform: scale(1.25); }
+  50%      { transform: scale(1.1); }
+  65%      { transform: scale(1.3); }
+}
+
+.couple-role-badge {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8C6721;
+  background: rgba(197, 160, 89, 0.16);
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-top: 15px;
+  box-shadow: 0 2px 6px rgba(197, 160, 89, 0.12);
+}
+
+.photo-name-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  background: linear-gradient(135deg, #7A1A28 0%, #C5A059 55%, #5A0F1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 6px 0 2px;
+  filter: drop-shadow(0 1px 3px rgba(120, 20, 40, 0.12));
+}
+
+.photo-attribute-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A7B38;
+  font-weight: 600;
+}
+
+/* Interactive Rose Petal & Blessings Shower Bar */
+.couple-blessing-bar {
+  margin: 32px auto 10px;
+  text-align: center;
+}
+
+.btn-shower-blessings {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #8B1E2F 0%, #5A0F1B 100%);
+  border: 1.8px solid #C5A059;
+  border-radius: 35px;
+  color: #FFFDF9;
+  font-family: 'Cinzel', serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(90, 15, 27, 0.35), 0 0 20px rgba(197, 160, 89, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shower-blessings:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(90, 15, 27, 0.45), 0 0 26px rgba(229, 195, 120, 0.5);
+  border-color: #E5C378;
+}
+
+.btn-shower-blessings:active {
+  transform: scale(0.96);
+}
+
+.shower-icon {
+  color: #F3E5AB;
+  font-size: 15px;
+}
+
+.shower-counter-pill {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.blessing-hint {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  color: #8C6721;
+  margin-top: 10px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Floating Upward Blessing Emojis */
+.floating-blessing-emoji {
+  position: absolute;
+  pointer-events: none;
+  z-index: 99999;
+  font-size: 24px;
+  animation: blessingFloatUp 2.8s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+}
+
+@keyframes blessingFloatUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.4) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -30px) scale(1.3) rotate(var(--rot, 15deg));
+  }
+  80% {
+    opacity: 0.9;
+    transform: translate(calc(-50% + var(--drift-x, 20px)), -130px) scale(1.1) rotate(var(--rot, -15deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift-x, 40px)), -180px) scale(0.8) rotate(var(--rot, 30deg));
+  }
+}
+
+/* Sacred Blessings & Welcome Note */
+.sacred-blessing-wrap {
+  margin: 20px auto 10px;
+  max-width: 520px;
+  padding: 0 16px;
+  animation: heroFadeIn 2.2s 1.2s ease backwards;
+}
+
+.sacred-blessing-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8C6721;
+  margin-bottom: 6px;
+}
+
+.sacred-blessing-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: #A67D2B;
+  margin-bottom: 18px;
+}
+
+.invitation-letter {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #5C4428;
+  font-weight: 400;
+}
+
+.ornament-divider {
+  width: 180px;
+  height: auto;
+  margin: 24px auto 0;
+  display: block;
+  opacity: 0.9;
+}
+
+
+/* ==========================================================================
+   3. SCRATCH DATE CARD & LIVE COUNTDOWN TIMER
+   ========================================================================== */
+.countdown-section {
+  background: #F4E8D3;
+  padding: 45px 20px;
+  border-top: 1px solid rgba(197, 160, 89, 0.3);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+  text-align: center;
+}
+
+/* Scratch Card */
+.scratch-date-wrap {
+  margin: 0 auto 30px;
+  max-width: 270px;
+  text-align: center;
+}
+
+.scratch-card-body {
+  position: relative;
+  width: 250px;
+  height: 62px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(140, 100, 60, 0.18);
+  border: 1.5px solid #C5A059;
+  background: #FFFDF9;
+}
+
+.scratch-revealed-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFFDF9;
+}
+
+.revealed-day {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #7A1A28;
+  letter-spacing: 0.08em;
+}
+
+.revealed-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  color: #8C6721;
+  font-weight: 600;
+}
+
+#scratch-canvas {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  touch-action: none;
+  transition: opacity 0.5s ease;
+}
+
+.scratch-hint {
+  margin-top: 8px;
+}
+
+.scratch-hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  color: #8C6721;
+  background: rgba(255, 253, 249, 0.8);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-weight: 600;
+}
+
+.countdown-header {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8C6721;
+  margin-bottom: 24px;
+}
+
+#countdownContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-block {
+  text-align: center;
+  background: #FFFDF9;
+  border: 1.5px solid #C5A059;
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 68px;
+  box-shadow: 0 6px 16px rgba(140, 100, 60, 0.12);
+}
+
+.number-wrap {
+  overflow: hidden;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number {
+  font-size: 34px;
+  font-family: 'Cinzel', 'Ovo', serif;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+  color: #8C6721;
+  background: var(--gold-gradient);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4.5s ease-in-out infinite;
+}
+
+.number.flip-out {
+  transform: translateY(-60%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.number.flip-in {
+  transform: translateY(60%);
+  opacity: 0;
+  transition: none;
+}
+
+.time-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #A67D2B;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.time-colon {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  color: #C5A059;
+  margin-top: -12px;
+  font-weight: 700;
+}
+
+
+/* ==========================================================================
+   4. SCHEDULE OF EVENTS WITH EXPANDABLE ITINERARIES (Reference Style)
+   ========================================================================== */
+.schedule-section {
+  position: relative;
+  padding: 65px 24px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 252, 245, 1) 0%, rgba(249, 240, 224, 1) 100%);
+  overflow: hidden;
+}
+
+.section-corner-floral {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 4px 14px rgba(140, 100, 60, 0.15));
+  opacity: 0.88;
+}
+
+.section-corner-floral.top-left {
+  top: -10px;
+  left: -10px;
+  animation: floralSwayLeft 7s ease-in-out infinite;
+}
+
+.section-corner-floral.top-right {
+  top: -10px;
+  right: -10px;
+  animation: floralSwayRight 7s ease-in-out infinite;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.section-heading-flourish {
+  width: 130px;
+  height: auto;
+  margin: 0 auto 8px;
+  display: block;
+  opacity: 0.85;
+}
+
+.section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #A67D2B;
+  margin-bottom: 40px;
+}
+
+.timeline-cards-container {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Event Luxury Card */
+.event-card-luxury {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 253, 249, 0.94);
+  border: 1.5px solid rgba(197, 160, 89, 0.45);
+  border-radius: 16px;
+  padding: 18px 20px 14px;
+  box-shadow: 0 8px 24px rgba(140, 100, 60, 0.1);
+  position: relative;
+  z-index: 2;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-align: left;
+  backdrop-filter: blur(8px);
+}
+
+.event-card-luxury:hover {
+  border-color: #C5A059;
+  box-shadow: 0 12px 32px rgba(140, 100, 60, 0.18), 0 0 16px rgba(243, 229, 171, 0.35);
+  background: #FFFDF9;
+}
+
+.event-header-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.event-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--crimson-gradient);
+  border: 2px solid #C5A059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(90, 15, 27, 0.3);
+  color: #F3E5AB;
+  font-size: 20px;
+  transition: transform 0.4s ease;
+}
+
+.event-card-luxury:hover .event-badge-icon {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 6px 18px rgba(197, 160, 89, 0.5);
+  border-color: #F3E5AB;
+}
+
+.event-main-content {
+  flex: 1;
+}
+
+.event-time-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #8C6721;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-time-tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C5A059;
+  box-shadow: 0 0 6px #C5A059;
+}
+
+.event-title-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #4A3319;
+  line-height: 1.2;
+}
+
+.event-description-luxury {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: #7A5930;
+  margin-top: 3px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Event Card Bottom Action Bar (Reference Architecture) */
+.event-card-bottom-bar {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.event-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-card-itinerary,
+.btn-card-add,
+.btn-card-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-card-itinerary {
+  background: #F4E8D3;
+  color: #7A1A28;
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  flex: 1.2;
+}
+
+.btn-card-itinerary:hover,
+.btn-card-itinerary.active {
+  background: #7A1A28;
+  color: #FFFDF9;
+  border-color: #7A1A28;
+}
+
+.it-chevron {
+  transition: transform 0.3s ease;
+  font-size: 10px;
+}
+
+.btn-card-itinerary.active .it-chevron {
+  transform: rotate(180deg);
+}
+
+.btn-card-add {
+  background: #FFFDF9;
+  color: #8C6721;
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  flex: 1;
+}
+
+.btn-card-add:hover {
+  background: #C5A059;
+  color: #FFFDF9;
+  border-color: #C5A059;
+}
+
+.btn-card-map {
+  background: #FFFDF9;
+  color: #7A1A28;
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  flex: 0.9;
+}
+
+.btn-card-map:hover {
+  background: #7A1A28;
+  color: #FFFDF9;
+  border-color: #7A1A28;
+}
+
+/* Expandable Ceremony Itinerary Drawer */
+.event-itinerary-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.event-itinerary-drawer.open {
+  max-height: 300px;
+}
+
+.itinerary-timeline {
+  padding-top: 14px;
+  margin-top: 10px;
+  border-top: 1px dashed rgba(197, 160, 89, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.itinerary-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.step-time-badge {
+  background: var(--crimson-gradient);
+  color: #F3E5AB;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #C5A059;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.step-details {
+  flex: 1;
+}
+
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #4A3319;
+  font-weight: 700;
+  display: block;
+}
+
+.step-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  color: #7A5930;
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+
+/* ==========================================================================
+   5. VENUE SECTION & GOOGLE MAPS PREVIEW
+   ========================================================================== */
+.venue-section {
+  background: #F4E8D3;
+  padding: 55px 24px;
+  border-top: 1px solid rgba(197, 160, 89, 0.3);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+  text-align: center;
+}
+
+.venue-artwork {
+  max-width: 440px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(140, 100, 60, 0.2);
+  border: 2.5px solid #C5A059;
+  margin-bottom: 24px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.venue-name {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #8C6721;
+  margin-bottom: 6px;
+}
+
+.venue-address {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #5C4428;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Venue Map Preview Card */
+.venue-map-preview-card {
+  max-width: 480px;
+  margin: 0 auto 26px;
+  background: #FFFDF9;
+  border: 1.5px solid #C5A059;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(140, 100, 60, 0.15);
+}
+
+.venue-map-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #F4E8D3;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.map-preview-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8C6721;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-direct-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #7A1A28;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.venue-map-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.venue-map-iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.actions-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.royal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-family: 'Cinzel', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #8C6721 0%, #C5A059 50%, #8C6721 100%);
+  color: #FFFDF9;
+  box-shadow: 0 6px 18px rgba(140, 100, 60, 0.3);
+  border: 1px solid #E5C378;
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(140, 100, 60, 0.45);
+  background: linear-gradient(135deg, #A67D2B 0%, #D4AF37 50%, #A67D2B 100%);
+}
+
+.btn-crimson {
+  background: var(--crimson-gradient);
+  color: #FFFDF9;
+  box-shadow: 0 6px 18px rgba(90, 15, 27, 0.3);
+  border: 1px solid #C5A059;
+}
+
+.btn-crimson:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(90, 15, 27, 0.45);
+}
+
+
+/* ==========================================================================
+   6. WARM BLESSINGS & DRESS CODE CARDS WITH ROSE VINES (noroot_14 & noroot_10)
+   ========================================================================== */
+.notes-section {
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.notes-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.note-card {
+  position: relative;
+  overflow: hidden;
+  background: #FFFDF9;
+  border: 2px solid #C5A059;
+  border-radius: 12px;
+  padding: 28px 18px 22px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(140, 100, 60, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(140, 100, 60, 0.18);
+}
+
+.card-corner-vine {
+  position: absolute;
+  width: 65px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.card-corner-vine.left { top: 0; left: 0; }
+.card-corner-vine.right { top: 0; right: 0; }
+
+.note-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8C6721;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+  padding-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.note-card-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #5C4428;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+.note-card-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  color: #8C6721;
+  margin-top: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ==========================================================================
+   7. INVITESTORY FOOTER BRANDING
+   ========================================================================== */
+.invitestory-footer {
+  background: #F4E8D3;
+  padding: 40px 20px 48px;
+  text-align: center;
+  border-top: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+.footer-flourish {
+  width: 160px;
+  height: auto;
+  margin: 0 auto 14px;
+  display: block;
+  opacity: 0.9;
+}
+
+.footer-signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #8C6721;
+  margin-bottom: 12px;
+}
+
+.footer-insta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 20px;
+  background: #FFFDF9;
+  border: 1.5px solid #C5A059;
+  border-radius: 30px;
+  color: #7A1A28;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(140, 100, 60, 0.15);
+  transition: all 0.35s ease;
+}
+
+.footer-insta-link:hover {
+  transform: translateY(-2px);
+  background: #7A1A28;
+  color: #FFFDF9;
+  border-color: #7A1A28;
+  box-shadow: 0 6px 20px rgba(120, 20, 40, 0.25);
+}
+
+.footer-insta-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.copyright-note {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  color: #A67D2B;
+  letter-spacing: 0.1em;
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   GLOBAL KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes goldShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floralSwayLeft {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50%      { transform: rotate(2deg) scale(1.03); }
+}
+
+@keyframes floralSwayRight {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50%      { transform: rotate(-2deg) scale(1.03); }
+}
+
+@keyframes petalDrift1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.45; }
+  50%      { transform: translate(20px, -30px) rotate(35deg); opacity: 0.85; }
+}
+
+@keyframes petalDrift2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.45; }
+  50%      { transform: translate(-20px, -35px) rotate(-35deg); opacity: 0.85; }
+}
+
+
+/* ==========================================================================
+   MOBILE RESPONSIVE RULES (< 600px)
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+  .hero-corner-floral { width: 95px; }
+  .section-corner-floral { width: 85px; }
+  .card-corner-vine { width: 48px; }
+
+  .couple-headline { font-size: 38px; }
+  .ampersand { font-size: 30px; }
+
+  .couple-section { padding: 40px 14px 45px; }
+  .couple-gallery-container { gap: 6px; }
+  .royal-arched-card {
+    height: 230px;
+    border-radius: 105px 105px 14px 14px;
+    border-width: 2.5px;
+    outline-width: 1.5px;
+    outline-offset: -4px;
+    padding: 3px;
+  }
+  .royal-arched-img {
+    border-radius: 100px 100px 11px 11px;
+  }
+  .frame-crown-top {
+    width: 24px;
+    height: 24px;
+    font-size: 10.5px;
+    top: -11px;
+  }
+  .knot-ring {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  .knot-divider-line {
+    height: 22px;
+  }
+  .knot-text {
+    font-size: 7.5px;
+  }
+  .couple-role-badge {
+    font-size: 8.5px;
+    padding: 3px 10px;
+    margin-top: 10px;
+  }
+  .photo-name-tag {
+    font-size: 18px;
+  }
+  .photo-attribute-tag {
+    font-size: 8.5px;
+  }
+  .btn-shower-blessings {
+    padding: 11px 20px;
+    font-size: 12px;
+  }
+
+  .event-card-luxury {
+    padding: 14px 16px 12px;
+  }
+
+  .event-badge-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 17px;
+  }
+
+  .event-title-luxury {
+    font-size: 19px;
+  }
+
+  .event-card-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-card-itinerary {
+    flex: 100%;
+    margin-bottom: 4px;
+  }
+
+  .btn-card-add, .btn-card-map {
+    flex: 1;
+  }
+
+  .notes-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .actions-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
