@@ -7,6 +7,5 @@
   },
   "assets": {
     "directory": "."
-  },
-  "git_ignore": [".git"]
+  }
 }
