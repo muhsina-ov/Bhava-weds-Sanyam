@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="crimsonVelvet" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#961B2E" />
+      <stop offset="55%" stop-color="#540A15" />
+      <stop offset="100%" stop-color="#240307" />
+    </radialGradient>
+
+    <!-- Gold Gradient -->
+    <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3D1" />
+      <stop offset="30%" stop-color="#F3E5AB" />
+      <stop offset="60%" stop-color="#D4AF37" />
+      <stop offset="85%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#8C6721" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Outer Shadow & Base Circle -->
+  <circle cx="256" cy="256" r="236" fill="url(#crimsonVelvet)" filter="url(#shadowFilter)" />
+
+  <!-- Outer Gold Concentric Borders -->
+  <circle cx="256" cy="256" r="234" fill="none" stroke="url(#goldMetallic)" stroke-width="7" />
+  <circle cx="256" cy="256" r="215" fill="none" stroke="url(#goldMetallic)" stroke-width="3" stroke-opacity="0.75" />
+
+  <!-- Beaded Gold Circles Border -->
+  <g fill="#F3E5AB" filter="url(#goldGlow)">
+    <!-- 32 Beads around circumference -->
+    <circle cx="256" cy="32" r="6" />
+    <circle cx="300" cy="36" r="5" />
+    <circle cx="342" cy="48" r="5" />
+    <circle cx="380" cy="69" r="5" />
+    <circle cx="413" cy="99" r="5" />
+    <circle cx="439" cy="135" r="5" />
+    <circle cx="457" cy="176" r="5" />
+    <circle cx="466" cy="220" r="5" />
+    <circle cx="466" cy="266" r="5" />
+    <circle cx="457" cy="310" r="5" />
+    <circle cx="439" cy="351" r="5" />
+    <circle cx="413" cy="387" r="5" />
+    <circle cx="380" cy="417" r="5" />
+    <circle cx="342" cy="438" r="5" />
+    <circle cx="300" cy="450" r="5" />
+    <circle cx="256" cy="454" r="6" />
+    <circle cx="212" cy="450" r="5" />
+    <circle cx="170" cy="438" r="5" />
+    <circle cx="132" cy="417" r="5" />
+    <circle cx="99" cy="387" r="5" />
+    <circle cx="73" cy="351" r="5" />
+    <circle cx="55" cy="310" r="5" />
+    <circle cx="46" cy="266" r="5" />
+    <circle cx="46" cy="220" r="5" />
+    <circle cx="55" cy="176" r="5" />
+    <circle cx="73" cy="135" r="5" />
+    <circle cx="99" cy="99" r="5" />
+    <circle cx="132" cy="69" r="5" />
+    <circle cx="170" cy="48" r="5" />
+    <circle cx="212" cy="36" r="5" />
+  </g>
+
+  <!-- 4 Cardinal Gold Diamonds -->
+  <polygon points="256,18 266,32 256,46 246,32" fill="url(#goldMetallic)" />
+  <polygon points="256,494 266,480 256,466 246,480" fill="url(#goldMetallic)" />
+  <polygon points="18,256 32,246 46,256 32,266" fill="url(#goldMetallic)" />
+  <polygon points="494,256 480,246 466,256 480,266" fill="url(#goldMetallic)" />
+
+  <!-- Monogram Elements -->
+  <!-- Top & Bottom Diamonds -->
+  <polygon points="256,120 264,132 256,144 248,132" fill="#F3E5AB" />
+  <polygon points="256,380 263,390 256,400 249,390" fill="#F3E5AB" />
+
+  <!-- Monogram "B" and "S" and script "&" -->
+  <text x="145" y="300" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="145" font-weight="bold" fill="#000000" opacity="0.6" text-anchor="middle">B</text>
+  <text x="142" y="296" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="145" font-weight="bold" fill="url(#goldMetallic)" text-anchor="middle">B</text>
+
+  <text x="256" y="295" font-family="'Alex Brush', 'Brush Script MT', cursive" font-size="170" font-style="italic" fill="#000000" opacity="0.6" text-anchor="middle">&amp;</text>
+  <text x="253" y="291" font-family="'Alex Brush', 'Brush Script MT', cursive" font-size="170" font-style="italic" fill="#F3E5AB" text-anchor="middle">&amp;</text>
+
+  <text x="367" y="300" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="145" font-weight="bold" fill="#000000" opacity="0.6" text-anchor="middle">S</text>
+  <text x="364" y="296" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="145" font-weight="bold" fill="url(#goldMetallic)" text-anchor="middle">S</text>
+
+  <!-- Subtitle: WEDDING -->
+  <text x="256" y="358" font-family="'Montserrat', sans-serif" font-size="24" font-weight="bold" letter-spacing="4" fill="url(#goldMetallic)" text-anchor="middle">WEDDING</text>
+</svg>
