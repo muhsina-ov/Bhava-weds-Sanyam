@@ -241,7 +241,7 @@ def create_og_banner():
     
     # 11. Details Badges
     b1_txt = "THURSDAY, 26 NOV 2026"
-    b2_txt = "RIVAYA BY ZION"
+    b2_txt = "CROSSROADS BANQUETS"
     
     tb1_bbox = font_badge.getbbox(b1_txt)
     tb1_w = tb1_bbox[2] - tb1_bbox[0]
