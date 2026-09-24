@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dpr = window.devicePixelRatio || 1;
     const width = 250;
-    const height = 64;
+    const height = 68;
 
     scratchCanvas.width = width * dpr;
     scratchCanvas.height = height * dpr;

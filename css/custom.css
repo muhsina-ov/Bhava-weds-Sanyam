@@ -547,7 +547,7 @@ body.video-active #weiAudioBtn {
 .scratch-card-body {
   position: relative;
   width: 250px;
-  height: 64px;
+  height: 68px;
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
@@ -564,6 +564,8 @@ body.video-active #weiAudioBtn {
   align-items: center;
   justify-content: center;
   background: #FFFDF9;
+  padding: 0 8px;
+  text-align: center;
 }
 
 .revealed-day {
@@ -576,10 +578,16 @@ body.video-active #weiAudioBtn {
 
 .revealed-sub {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 10px;
   color: var(--theme-grey-medium);
   font-weight: 600;
   margin-top: 2px;
+  line-height: 1.32;
+  text-wrap: balance;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 100%;
+  letter-spacing: 0.02em;
 }
 
 #scratch-canvas {
@@ -942,6 +950,12 @@ body.video-active #weiAudioBtn {
   font-style: italic;
   color: var(--theme-grey-medium);
   margin-bottom: 44px;
+  line-height: 1.5;
+  text-wrap: balance;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8px;
 }
 
 /* Lotus Timeline Container */
@@ -1156,7 +1170,7 @@ body.video-active #weiAudioBtn {
 
 
 /* ==========================================================================
-   6. VENUE SECTION (Rivaya by Zion)
+   6. VENUE SECTION (Rivaya by Zion (Formerly Crossroad Banquets))
    ========================================================================== */
 .venue-section {
   background: var(--theme-bg-alt);
@@ -1183,11 +1197,17 @@ body.video-active #weiAudioBtn {
 
 .venue-name {
   font-family: var(--font-serif-luxury);
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--theme-pink-dark);
   margin-bottom: 6px;
+  line-height: 1.32;
+  text-wrap: balance;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
 }
 
 .venue-address {
@@ -1564,6 +1584,29 @@ body.video-active #weiAudioBtn {
   .scrolling-lotus-wrap {
     width: 42px;
     height: 42px;
+  }
+
+  .venue-name {
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    padding: 0 6px;
+  }
+
+  .venue-section .section-subtitle,
+  .section-subtitle {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .revealed-sub {
+    font-size: 9px;
+    line-height: 1.3;
+  }
+
+  .scratch-card-body {
+    width: 250px;
+    height: 68px;
   }
 
 .notes-cards-grid {
