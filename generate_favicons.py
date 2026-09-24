@@ -25,9 +25,9 @@ def generate_master_icon(size=512):
     disc = Image.new('RGBA', (size, size), (0, 0, 0, 0))
     disc_pixels = disc.load()
     
-    c_center = (142, 26, 44, 255) # Bright ruby center
-    c_mid = (78, 10, 20, 255)     # Rich wine
-    c_edge = (32, 4, 8, 255)      # Dark velvet
+    c_center = (235, 183, 196, 255) # Soft blush pink center
+    c_mid = (212, 130, 150, 255)    # Dusty rose
+    c_edge = (90, 77, 83, 255)      # Soft slate grey edge
     
     for y in range(size):
         for x in range(size):

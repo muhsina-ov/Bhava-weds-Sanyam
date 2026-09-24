@@ -1,6 +1,6 @@
 /* ==========================================================================
-   BHAVYA & SANYAM ROYAL WEDDING INVITATION — INTERACTIVE ENGINE
-   Faithful to Luxury Wax Seal Royale Architecture
+   BHAVYA & SANYAM WEDDING INVITATION — INTERACTIVE ENGINE
+   Pink & Grey Luxury Theme • Lotus Flower Timeline Scrolling
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ------------------------------------------------------------------------
-     2. AMBIENT GOLD DUST CANVAS PARTICLES
+     2. AMBIENT BLUSH PINK & PEARL DUST CANVAS PARTICLES
      ------------------------------------------------------------------------ */
   const canvas = document.getElementById('ambient-canvas');
   if (canvas) {
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         speedX: (Math.random() - 0.5) * 0.35,
         speedY: Math.random() * 0.45 + 0.25,
         opacity: Math.random() * 0.55 + 0.2,
-        color: Math.random() > 0.4 ? 'rgba(197, 160, 89, ' : 'rgba(243, 229, 171, '
+        color: Math.random() > 0.4 ? 'rgba(212, 130, 150, ' : 'rgba(235, 183, 196, '
       });
     }
 
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color + p.opacity + ')';
         ctx.shadowBlur = 4;
-        ctx.shadowColor = 'rgba(197, 160, 89, 0.4)';
+        ctx.shadowColor = 'rgba(212, 130, 150, 0.4)';
         ctx.fill();
       });
 
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ------------------------------------------------------------------------
-     3. INTERACTIVE SCRATCH-TO-REVEAL DATE CARD
+     3. INTERACTIVE SCRATCH-TO-REVEAL DATE CARD (Pink & Silver Foil)
      ------------------------------------------------------------------------ */
   const scratchContainer = document.getElementById('scratch-date-container');
   const scratchCanvas    = document.getElementById('scratch-canvas');
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dpr = window.devicePixelRatio || 1;
     const width = 250;
-    const height = 62;
+    const height = 64;
 
     scratchCanvas.width = width * dpr;
     scratchCanvas.height = height * dpr;
@@ -247,31 +247,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initFoil() {
       const grad = ctx.createLinearGradient(0, 0, width, height);
-      grad.addColorStop(0, '#E5C469');
-      grad.addColorStop(0.2, '#B88728');
-      grad.addColorStop(0.48, '#FFF6CE');
-      grad.addColorStop(0.72, '#D49B24');
-      grad.addColorStop(1, '#8C5E14');
+      grad.addColorStop(0, '#EBB7C4');
+      grad.addColorStop(0.25, '#D48296');
+      grad.addColorStop(0.5, '#FFF0F3');
+      grad.addColorStop(0.75, '#C27285');
+      grad.addColorStop(1, '#9E9197');
 
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
 
       for (let i = 0; i < 36; i++) {
-        ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255, 255, 255, 0.6)' : 'rgba(110, 75, 15, 0.28)';
+        ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255, 255, 255, 0.65)' : 'rgba(140, 61, 82, 0.25)';
         ctx.beginPath();
         ctx.arc(Math.random() * width, Math.random() * height, Math.random() * 1.5 + 0.4, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      ctx.strokeStyle = 'rgba(255, 248, 215, 0.75)';
+      ctx.strokeStyle = 'rgba(255, 240, 245, 0.75)';
       ctx.lineWidth = 1.2;
       ctx.strokeRect(4, 4, width - 8, height - 8);
 
-      ctx.font = '700 10.5px "Cinzel", Georgia, serif';
+      ctx.font = '600 10.5px "Plus Jakarta Sans", sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillStyle = 'rgba(75, 45, 10, 0.88)';
-      ctx.shadowColor = 'rgba(255, 255, 255, 0.75)';
+      ctx.fillStyle = 'rgba(90, 77, 83, 0.9)';
+      ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
       ctx.shadowBlur = 2;
       ctx.fillText('✦ SCRATCH TO REVEAL DATE ✦', width / 2, height / 2);
       ctx.shadowColor = 'transparent';
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scratchCanvas.style.opacity = '0';
       scratchCanvas.style.pointerEvents = 'none';
       if (scratchHint) {
-        scratchHint.innerHTML = '<span class="scratch-hint-pill"><i class="fa-solid fa-crown"></i> Auspicious Day • Thursday, 26 Nov 2026</span>';
+        scratchHint.innerHTML = '<span class="scratch-hint-pill"><i class="fa-solid fa-heart" style="color:#D48296;"></i> Auspicious Day • Thursday, 26 Nov 2026</span>';
       }
       setTimeout(() => { scratchCanvas.style.display = 'none'; }, 600);
     }
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (diff <= 0) {
       const container = document.getElementById('countdownContainer');
       if (container) {
-        container.innerHTML = '<div style="font-family:\'Cinzel\',serif; font-size:22px; color:#8C6721; font-weight:700;">The Auspicious Wedding Day is Today!</div>';
+        container.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif; font-size:24px; color:#8C3D52; font-weight:700;">The Auspicious Wedding Day is Today!</div>';
       }
       return;
     }
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ------------------------------------------------------------------------ */
   const showerBtn = document.getElementById('btn-shower-blessings');
   const blessingCountElem = document.getElementById('blessing-count');
-  const coupleContainer = document.querySelector('.couple-gallery-container');
+  const coupleContainer = document.querySelector('.couple-single-photo-wrap');
 
   let blessingCount = parseInt(localStorage.getItem('bhavya_sanyam_blessings') || '452', 10);
   if (blessingCountElem) {
@@ -426,8 +426,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => { showerBtn.style.transform = ''; }, 200);
     }
 
-    // Spawn upward floating emojis around couple cards
-    const emojis = ['💖', '🌸', '✨', '🌹', '💫', '❤️', '👑', '🕊️'];
+    // Spawn upward floating emojis
+    const emojis = ['💖', '🌸', '✨', '🌹', '🕊️', '🤍', '💫', '💐'];
     const emojiCount = 10;
     const coupleRect = coupleContainer ? coupleContainer.getBoundingClientRect() : null;
 
@@ -453,8 +453,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => emojiEl.remove(), 2800);
     }
 
-    // Spawn falling flower petals across screen
-    const petalColors = ['#D92546', '#8B1E2F', '#FFA500', '#FFD700', '#FAD2E1', '#C5A059', '#FFFDF9'];
+    // Spawn falling flower petals in soft pink & grey palette
+    const petalColors = ['#D48296', '#EBB7C4', '#F4D6DE', '#C27285', '#FFFDF9', '#E8A598', '#D8CFD3'];
     const count = 34;
 
     for (let i = 0; i < count; i++) {
@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
       petal.style.height = `${isCircle ? size : size * 1.5}px`;
       petal.style.backgroundColor = color;
       petal.style.borderRadius = isCircle ? '50%' : '50% 0 50% 50%';
-      petal.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.18)';
+      petal.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.12)';
       petal.style.setProperty('--drift-x', driftX);
       petal.style.setProperty('--rot', rot);
       petal.style.animationDuration = duration;
@@ -489,69 +489,179 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ------------------------------------------------------------------------
-     6. CEREMONY ITINERARY ACCORDION DRAWERS
+     6. MOVABLE ROSE / LOTUS FLOWER TIMELINE ENGINE
+     (Smooth scroll-driven movement, click-to-glide, and touch/drag interactions)
      ------------------------------------------------------------------------ */
-  const itineraryBtns = document.querySelectorAll('.btn-card-itinerary');
-  itineraryBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const card = btn.closest('.event-card-luxury');
-      if (!card) return;
-      const drawer = card.querySelector('.event-itinerary-drawer');
-      if (!drawer) return;
+  const timelineContainer = document.getElementById('lotusTimeline');
+  const scrollingLotus    = document.getElementById('scrollingLotus');
+  const eventRows         = document.querySelectorAll('.lotus-event-row');
 
-      const isOpen = drawer.classList.contains('open');
+  if (timelineContainer && scrollingLotus && eventRows.length > 0) {
+    let ticking = false;
+    let isDraggingLotus = false;
+    let dragStartY = 0;
+    let lotusStartTop = 0;
 
-      document.querySelectorAll('.event-itinerary-drawer.open').forEach(d => {
-        if (d !== drawer) {
-          d.classList.remove('open');
-          const parent = d.closest('.event-card-luxury');
-          if (parent) {
-            parent.classList.remove('itinerary-open');
-            const toggle = parent.querySelector('.btn-card-itinerary');
-            if (toggle) {
-              toggle.classList.remove('active');
-              toggle.setAttribute('aria-expanded', 'false');
-            }
+    function getNodeCenterY(node) {
+      const nodeRect = node.getBoundingClientRect();
+      const contRect = timelineContainer.getBoundingClientRect();
+      return (nodeRect.top + nodeRect.height / 2) - contRect.top;
+    }
+
+    function updateLotusPosition(targetProgress = null, smooth = false) {
+      if (isDraggingLotus) return;
+
+      const firstNode = eventRows[0].querySelector('.event-timeline-node');
+      const lastNode  = eventRows[eventRows.length - 1].querySelector('.event-timeline-node');
+
+      if (!firstNode || !lastNode) return;
+
+      const topNodeY    = getNodeCenterY(firstNode);
+      const bottomNodeY = getNodeCenterY(lastNode);
+      const totalSpan   = bottomNodeY - topNodeY;
+
+      let progress = 0;
+
+      if (targetProgress !== null) {
+        progress = Math.max(0, Math.min(1, targetProgress));
+      } else {
+        const windowHeight = window.innerHeight;
+        const triggerY     = windowHeight * 0.52;
+        const firstNodeScreenY = firstNode.getBoundingClientRect().top + firstNode.offsetHeight / 2;
+        const lastNodeScreenY  = lastNode.getBoundingClientRect().top + lastNode.offsetHeight / 2;
+        const screenSpan       = lastNodeScreenY - firstNodeScreenY;
+
+        if (screenSpan > 0) {
+          progress = (triggerY - firstNodeScreenY) / screenSpan;
+        }
+        progress = Math.max(0, Math.min(1, progress));
+      }
+
+      const currentLotusY = topNodeY + progress * totalSpan;
+      
+      if (smooth) {
+        scrollingLotus.style.transition = 'top 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        setTimeout(() => {
+          scrollingLotus.style.transition = '';
+        }, 500);
+      } else {
+        scrollingLotus.style.transition = 'top 0.12s ease-out';
+      }
+
+      scrollingLotus.style.top = `${currentLotusY}px`;
+
+      // Activate event rows as the rose moves over them
+      let closestRow = null;
+      let minDistance = Infinity;
+
+      eventRows.forEach((row) => {
+        const node = row.querySelector('.event-timeline-node');
+        if (node) {
+          const nodeY = getNodeCenterY(node);
+          const dist = Math.abs(currentLotusY - nodeY);
+
+          if (dist < minDistance) {
+            minDistance = dist;
+            closestRow = row;
+          }
+
+          if (currentLotusY >= nodeY - 20) {
+            row.classList.add('active');
+          } else {
+            row.classList.remove('active');
           }
         }
       });
 
-      if (isOpen) {
-        drawer.classList.remove('open');
-        card.classList.remove('itinerary-open');
-        btn.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        drawer.classList.add('open');
-        card.classList.add('itinerary-open');
-        btn.classList.add('active');
-        btn.setAttribute('aria-expanded', 'true');
+      if (closestRow && minDistance < 40) {
+        eventRows.forEach(r => r.classList.remove('active-current'));
+        closestRow.classList.add('active-current', 'active');
       }
+    }
+
+    function onScroll() {
+      if (!ticking && !isDraggingLotus) {
+        requestAnimationFrame(() => {
+          updateLotusPosition();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // Initial positioning
+    setTimeout(() => updateLotusPosition(), 250);
+
+    // 1. Click/Tap on Any Event Row to Glide Rose to that Event
+    eventRows.forEach((row, idx) => {
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', (e) => {
+        e.preventDefault();
+        const totalRows = eventRows.length;
+        const targetProgress = idx / (totalRows - 1);
+        updateLotusPosition(targetProgress, true);
+
+        // Highlight clicked row
+        eventRows.forEach(r => r.classList.remove('active-current'));
+        row.classList.add('active-current', 'active');
+      });
     });
-  });
 
-
-  /* ------------------------------------------------------------------------
-     7. ADD TO GOOGLE CALENDAR HANDLERS
-     ------------------------------------------------------------------------ */
-  const calBtns = document.querySelectorAll('.cal-btn');
-  calBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    // 2. Interactive Drag & Touch Support on the Rose
+    scrollingLotus.addEventListener('pointerdown', (e) => {
       e.preventDefault();
-      const title    = btn.getAttribute('data-title') || 'Bhavya & Sanyam Wedding Ceremony';
-      const startIso = btn.getAttribute('data-start'); // '2026-11-26T11:00:00'
-      const endIso   = btn.getAttribute('data-end') || '2026-11-26T19:00:00';
-      const location = btn.getAttribute('data-location') || 'Crossroads Banquets';
-
-      const startDate = new Date(startIso + '+05:30');
-      const endDate   = new Date(endIso + '+05:30');
-
-      const formatGCalDate = (d) => d.toISOString().replace(/-|:|\.\d+/g, '');
-      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${formatGCalDate(startDate)}/${formatGCalDate(endDate)}&details=${encodeURIComponent('Join us to celebrate the wedding union of Bhavya & Sanyam at Crossroads Banquets.')}&location=${encodeURIComponent(location)}`;
-
-      window.open(gcalUrl, '_blank');
+      e.stopPropagation();
+      isDraggingLotus = true;
+      scrollingLotus.classList.add('dragging');
+      dragStartY = e.clientY;
+      lotusStartTop = parseFloat(scrollingLotus.style.top) || 0;
+      scrollingLotus.setPointerCapture(e.pointerId);
     });
-  });
+
+    window.addEventListener('pointermove', (e) => {
+      if (!isDraggingLotus) return;
+      e.preventDefault();
+
+      const firstNode = eventRows[0].querySelector('.event-timeline-node');
+      const lastNode  = eventRows[eventRows.length - 1].querySelector('.event-timeline-node');
+      if (!firstNode || !lastNode) return;
+
+      const topNodeY    = getNodeCenterY(firstNode);
+      const bottomNodeY = getNodeCenterY(lastNode);
+
+      const deltaY = e.clientY - dragStartY;
+      let newTop = lotusStartTop + deltaY;
+      newTop = Math.max(topNodeY, Math.min(bottomNodeY, newTop));
+
+      scrollingLotus.style.transition = 'none';
+      scrollingLotus.style.top = `${newTop}px`;
+
+      // Update active rows while dragging
+      eventRows.forEach((row) => {
+        const node = row.querySelector('.event-timeline-node');
+        if (node) {
+          const nodeY = getNodeCenterY(node);
+          if (newTop >= nodeY - 20) {
+            row.classList.add('active');
+          } else {
+            row.classList.remove('active');
+          }
+        }
+      });
+    });
+
+    function endDrag(e) {
+      if (!isDraggingLotus) return;
+      isDraggingLotus = false;
+      scrollingLotus.classList.remove('dragging');
+      scrollingLotus.style.transition = '';
+    }
+
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+  }
 
 });
