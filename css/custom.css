@@ -1128,6 +1128,16 @@ body.video-active #weiAudioBtn {
   transition: color 0.3s ease;
 }
 
+.event-time {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--theme-pink-primary);
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
 .lotus-event-row.active .event-name-card {
   border-color: var(--theme-pink-primary);
   box-shadow: 0 10px 26px rgba(212, 130, 150, 0.22), 0 0 14px rgba(247, 228, 233, 0.4);
@@ -1146,7 +1156,7 @@ body.video-active #weiAudioBtn {
 
 
 /* ==========================================================================
-   6. VENUE SECTION (Crossroads Banquets)
+   6. VENUE SECTION (Rivaya by Zion)
    ========================================================================== */
 .venue-section {
   background: var(--theme-bg-alt);
@@ -1316,7 +1326,7 @@ body.video-active #weiAudioBtn {
 
 
 /* ==========================================================================
-   7. WARM BLESSINGS & DRESS CODE CARDS
+   7. WARM BLESSINGS CARD
    ========================================================================== */
 .notes-section {
   padding: 60px 24px;
@@ -1324,9 +1334,8 @@ body.video-active #weiAudioBtn {
 }
 
 .notes-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  justify-content: center;
   max-width: 540px;
   margin: 0 auto;
 }
@@ -1341,6 +1350,7 @@ body.video-active #weiAudioBtn {
   text-align: center;
   box-shadow: 0 8px 24px rgba(110, 90, 100, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  width: 100%;
 }
 
 .note-card:hover {
@@ -1556,10 +1566,10 @@ body.video-active #weiAudioBtn {
     height: 42px;
   }
 
-  .notes-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+.notes-cards-grid {
+  display: flex;
+  justify-content: center;
+}
 
   .actions-wrap {
     flex-direction: column;
