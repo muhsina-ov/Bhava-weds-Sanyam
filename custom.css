@@ -382,7 +382,7 @@ body.video-active #weiAudioBtn {
   width: 310px;
   max-width: 90%;
   height: auto;
-  aspect-ratio: 396 / 703;
+  aspect-ratio: 576 / 1024;
   object-fit: contain;
   border-radius: 20px;
   border: 1px solid rgba(212, 130, 150, 0.25);
